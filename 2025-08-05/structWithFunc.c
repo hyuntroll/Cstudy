@@ -41,7 +41,10 @@ Person ReadPersonInfo(void) {
     return cen;
 }
 
-
+void OrgSmTrans(Point * ptr) {
+    ptr->xpos = (ptr->xpos) * -1;
+    ptr->ypos = (ptr->ypos) * -1;
+}
 
 
 int main() {
@@ -53,6 +56,9 @@ int main() {
     ShowPosition(point); // 마찬가지로 '복사' 
 
     point = getCurrentPosition();
+    ShowPosition(point);
+
+    OrgSmTrans(&point);
     ShowPosition(point);
 
     Person man = ReadPersonInfo();
